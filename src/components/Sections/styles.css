@@ -1,0 +1,30 @@
+.swiper {
+  background: none;
+  width: 100%;
+  
+}
+.swiper.row{
+  background: none;
+  height: 100%;
+  
+}
+.swiper-slide {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 18px;
+  font-size: 22px;
+  font-weight: bold;
+  background: none;
+}
+.swiper-slide img {
+  width: 100%;
+  object-fit: contain; /* 이미지가 비율을 유지하면서 부모 요소에 꽉 차게 들어가도록 설정 */
+  border-radius: 18px; /* 이미지도 부모 요소처럼 둥근 모서리를 가지도록 설정 */
+}
+.swiper-slide img.row {
+  height: 100%;
+  object-fit: cover; /* 이미지가 비율을 유지하면서 부모 요소에 꽉 차게 들어가도록 설정 */
+  border-radius: 18px; /* 이미지도 부모 요소처럼 둥근 모서리를 가지도록 설정 */
+}
