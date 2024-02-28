@@ -4,7 +4,7 @@ import Inner from '../Commons/Inner';
 import title from '../../assets/skillsTitle.png'; 
 
 const knwoledgePath = [
-  './portfolio/images/knowledgeable1.png',
+  './/images/knowledgeable1.png',
   './images/knowledgeable2.png',
   './images/knowledgeable3.png',
 ]

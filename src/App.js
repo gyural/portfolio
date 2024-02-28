@@ -22,8 +22,8 @@ function App() {
   return (
     <>
       <Header scrollToSkillSection={scrollToSkillSection}  scrollToProjectSection={scrollToProjectSection}></Header>
-      <SkillSection ref={SkillSectionRef}></SkillSection>
-      <ProjectSection ref={ProjectSectionRef}></ProjectSection>
+      {/* <SkillSection ref={SkillSectionRef}></SkillSection>
+      <ProjectSection ref={ProjectSectionRef}></ProjectSection> */}
     </>
   );
 }
