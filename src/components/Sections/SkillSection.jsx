@@ -38,7 +38,7 @@ const SkillsContainer = styled.div`
   display: flex;
   justify-content: space-around;
 
-  @media (max-width: 740px){
+  @media (max-width: 1000px){
     flex-direction: column;
     align-items: center;
   }
@@ -53,11 +53,11 @@ const WhiteBoxContainer = styled.div`
     width: 210px;
     font-size: 25px;
   } */
-
-  @media (max-width: 740px) {
-    width: 400px;
+  @media (max-width: 1000px) {
+    width: 100%;
     font-size: 36px;
   }
+  
 `
 const WhiteBox =styled.div`
   width: 100%;
@@ -71,6 +71,7 @@ const WhiteBox =styled.div`
   justify-content: center;
   gap: 10px;
   flex-wrap : wrap;
+  
 `
 const StackIcon = styled.div`
   width: ${(props) => (props.large === true ? '90%' : '40%')};

@@ -6,11 +6,9 @@ const Background = styled.div`
   margin-top: 0;
   width: 100%;
   box-sizing: border-box;
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+  background: linear-gradient(rgba(100, 100, 100, 0.8), rgba(100, 100, 100, 0.589)),
               url('./images/candi1.jpg');
   background-size: cover;
-  position: absolute;
-  opacity: 0.8;
   padding: 55px 0 ;
   font-size: 2.1rem;
   @media(max-width: 1000px){
@@ -33,8 +31,6 @@ const Navigation = styled.div`
   border-radius: 0 0 14px 14px;
   z-index: 10;
   font-size: 1.8rem;
-
-  
 `;
 const NavigationItems = styled.ul`
   height: auto;
@@ -57,7 +53,13 @@ const NavigationItem = styled.li`
   }
 `
 const NavigationItemMain = styled.li`
+  text-align: start;
   flex-grow: 1;
+  height: 100%;
+  white-space: nowrap; /* 텍스트 줄 바꿈 방지 */
+  @media (max-width: 1000px) {
+    
+  }
   @media (max-width: 740px) {
     text-align: center;
     
@@ -67,7 +69,6 @@ const ContentContainer = styled.div`
   width: 100%;
   color: white; 
   text-align: center;
-  
 `
 const StrongString = styled.strong`
   color: #E35F00;
@@ -112,17 +113,17 @@ function Header({scrollToSkillSection, scrollToProjectSection}) {
   }, []);
   return (
     <Background>
-      <Navigation scroll={scroll}>
-        <Inner>
-          <NavigationItems>
-            <NavigationItemMain>LimGyuSeong's Portofolio</NavigationItemMain>
-            <NavigationItem hoverColor={"#E1A660"} onClick={scrollToSkillSection}>Skills</NavigationItem>
-            <NavigationItem hoverColor={"#E1A660"} onClick={scrollToProjectSection}>Projects</NavigationItem>
-            <NavigationItem hoverColor={"#E1A660"}> About</NavigationItem>
-          </NavigationItems>
-        </Inner>
-      </Navigation>
       <ContentContainer>
+        <Navigation scroll={scroll}>
+          <Inner>
+            <NavigationItems>
+              <NavigationItemMain>LimGyuSeong's Portofolio</NavigationItemMain>
+              <NavigationItem hoverColor={"#E1A660"} onClick={scrollToSkillSection}>Skills</NavigationItem>
+              <NavigationItem hoverColor={"#E1A660"} onClick={scrollToProjectSection}>Projects</NavigationItem>
+              <NavigationItem hoverColor={"#E1A660"}> About</NavigationItem>
+            </NavigationItems>
+          </Inner>
+        </Navigation>
         <Inner>
           <div>
             <p>
