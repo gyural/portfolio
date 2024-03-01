@@ -105,7 +105,6 @@ function ProjectImages({ imgPath, row }) {
 
 const Container = styled.div`
   width: 100%;
-  
   /* 임시 높이 */
   /* height: 1000px; */
   background-color: #91C7EE;
@@ -135,25 +134,28 @@ const ProjectContainer = styled.div`
 // WhiteBox
 const WhiteBoxContainer = styled.div`
   width: 100%;
+  height: ${(props)=>(props.row === true? (`1000px`):('735px'))};
+  margin-bottom: 30px;
   text-align: center;
   font-size: 30px;
   font-weight: 700;
   z-index: 0;
   position: relative;
-/* 
+
   @media (max-width: 1000px) {
-    width: 210px;
-    font-size: 25px;
-  } */
+  height: ${(props)=>(props.row === true? (`1000px`):('920px'))};
+
+    font-size: 24px;
+  }
 
   @media (max-width: 740px) {
-    width: 400px;
+    width: 100%;
+    height: ${(props)=>(props.row === true? (`1000px`):('1180px'))};
     font-size: 36px;
   }
 `
 const WhiteBox =styled.div`
     width: 100%;
-    height: auto;
     padding: 24px;
     box-sizing: border-box;
     background-color: #fff;
@@ -165,27 +167,31 @@ const WhiteBox =styled.div`
     align-items: center;
     gap: 20px;
     position: relative;
-    @media (max-width: 1000px) {
-      height: 630px;
-    }
     
     /* 3D 회전 효과 */
     transform: ${(props) => (props.isBack ? 'rotateY(180deg)' : 'rotateY(0deg)')};
     opacity: ${(props) => (props.isBack ? '0' : '1')};
     transition: 1s ease; /* 애니메이션을 부드럽게 만들기 위해 트랜지션 추가 */
     visibility: ${(props) => (props.isBack ? 'hidden' : 'visible')};
-  
+
+    @media (max-width: 740px) {
+      padding-top: 80px;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0;
+
+    }
  `
 
 const WhiteBox__back =styled.div`
   width: 100%;
-  height: 658px;
   padding: 24px;
   box-sizing: border-box;
   background-color: #fff;
   align-items: center;
   border-radius: 15px;
   margin-top: 30px;
+  margin-bottom: 10px;
   display: flex;
   justify-content: space-around;
   gap: 20px;
@@ -193,7 +199,7 @@ const WhiteBox__back =styled.div`
   top: 0;
   backface-visibility: hidden;
   @media (max-width: 1000px) {
-    height: 630px;
+    flex-direction: column
   }
 
   /* 3D 회전 효과 */
@@ -209,12 +215,15 @@ const Architecture = styled.div`
   height: 100%;
   & img{
     width: 100%;
-    height: 100%;
     object-fit: contain;
+  }
+  @media (max-width: 1000px) {
+    margin-top: 48px;
+    width: 90%;
   }
 `
 const ProjThumnailContainer = styled.div`
-  width: ${(props)=>(props.row? '90%' : '268px')};
+  width: ${(props)=>(props.row? '90%' : '25%')};
   transform: ${(props) => (props.isBack ? 'rotateY(180deg)' : 'rotateY(0deg)')};
   height: 100%;
   display: flex;
@@ -222,10 +231,14 @@ const ProjThumnailContainer = styled.div`
   align-items: center;
   gap: 14px;
   transition: .4s;
+  
   @media (max-width: 1000px) {
-    width: calc(268px * .8);
+    width: ${(props)=>(props.row? '90%' : '33%')};
     
   }
+  @media (max-width: 740px) {
+    width: ${(props)=>(props.row? '100%' : '60%')};
+  } 
 `
 const ProjThumnail = styled.div`
   width: 94%;
@@ -235,7 +248,39 @@ const ProjThumnail = styled.div`
 
 `
 const ProjDetail = styled.div`
-    width: 44%;
+    width: ${(props)=>(props.row? '90%' : '44%')};
+    height: 100%;
+    font-size: 17px;
+    padding-top: 48px;
+    text-align: start;
+    display: flex;
+    gap: 20px;
+
+    & strong{
+    color: #bb0000;
+    }
+    & h3{
+      font-size: 22px;
+      margin-bottom: 1px;
+      padding: 0;
+
+      
+    }
+    
+    @media (max-width: 1000px) {
+      font-size: 15px;
+      height: 90%;
+
+      & h3{
+        font-size: 19px;
+      }
+    }
+    @media (max-width: 740px) {
+      width: 90%;
+      display: block;
+    }
+`
+const ProjDetail_back = styled.div`
     width: ${(props)=>(props.row? '90%' : '44%')};
     height: 100%;
     font-size: 17px;
@@ -252,9 +297,13 @@ const ProjDetail = styled.div`
       margin-bottom: 1px;
       padding: 0;
     }
-`
-const Subtitle = styled.p`
-  
+
+    @media (max-width: 1000px) {
+    width: 90%;
+    padding-top: 0;
+    gap: 0;
+
+  }
 `
 const MoreAbout = styled.div`
     display: flex;
@@ -271,9 +320,7 @@ const MoreAbout = styled.div`
   }
   animation: ${bounceAnimation} 1s infinite;
 `;
-const RotateBtn = styled.div`
-  
-`
+
 const ProjectSection = React.forwardRef((props, ref)=>{
   const [isBack, setIsBack] = useState([false, false, false]);
 
@@ -286,10 +333,10 @@ const ProjectSection = React.forwardRef((props, ref)=>{
           <Title> {' '}<img src="./images/Group.png" alt="프로제그 아이콘" />Project</Title>
           {/* 상추 프로젝트 */}
           <ProjectContainer>
-            <WhiteBoxContainer>
+            <WhiteBoxContainer row={true}>
               <WhiteBox isBack={isBack[0]} row={true}>
                 <ProjThumnailContainer row={true}>
-                  상추-상품을 추천해드립니다.
+                  상추
                   <ProjThumnail><ProjectImages row={true} imgPath={lettucePath}></ProjectImages></ProjThumnail>
                 </ProjThumnailContainer>
                 <ProjDetail row={true}>
@@ -306,17 +353,17 @@ const ProjectSection = React.forwardRef((props, ref)=>{
                       <h3>✔️ 핵심 기능 :<br/></h3>
                       ChatGPT API를 이용해 비슷한 상품들을 비교해주는 서비스<br/>
                       상품을 검색하면 상품의 네이버 평점 여러 조건들을 확인 가능<br/>
-                      비교했던 이력 조회 가능<br/><br/>
+                      비교했던 이력 조회 가능<br/>
                       <h3>✔️기술 :<br/></h3>
                         FE : ReactJS html, css, JS <br/>
                         BE : Python, DRF<br/>
-                        Etc : ChatGPTAPI, Naver OCR API, , 네이버 검색API, 네이버쇼핑 크롤링<br/>
+                        Etc : ChatGPTAPI, Naver OCR API, 네이버 검색API, 네이버쇼핑 크롤링<br/>
                     </p>
                   </div>
                   <div className='right'>
                     <p>
                       <h3>✔️개발 동기 :<br/></h3>
-                      너무많은 상품들은 사람이 비교하기 힘들어 AI가 대신 비교해주고 싶어 개발함 <br/><br/>
+                      너무많은 상품들은 사람이 비교하기 힘들어 AI가 대신 비교해주고 싶어 개발함 <br/>
                       <h3>✔️역할 :<br/></h3>
                       프론트엔드 팀원 <br/><br/>
                     </p>
@@ -326,7 +373,7 @@ const ProjectSection = React.forwardRef((props, ref)=>{
               </WhiteBox>
               <WhiteBox__back isBack={isBack[0]}>
                   <Architecture><img src="./images/lettuce/architecture.png" alt="architecture그림"/></Architecture>
-                  <ProjDetail>
+                  <ProjDetail_back>
                     <MoreAbout>
                       <a href="https://github.com/gyural/lettuce-frontend"><img src={moreAboutPath[0]}alt="깃허브 아이콘" /></a>
                       <div onClick={()=>{handleIsBack(0)}}>
@@ -340,7 +387,7 @@ const ProjectSection = React.forwardRef((props, ref)=>{
                       이 때 모든 상품들에 대해 크롤링을 하면 네이버에서 차단을 했습니다.  <br />이 문제를 해결하기 위해 유저가 상품을 클릭했을때 이벤트 핸들링으로 상품의 구체적인 정보를 가져와 해당 문제를
                       해결할 수 있었습니다. 
                     </p>
-                  </ProjDetail>
+                  </ProjDetail_back>
               </WhiteBox__back>
             </WhiteBoxContainer>
           </ProjectContainer>
@@ -385,7 +432,7 @@ const ProjectSection = React.forwardRef((props, ref)=>{
               </WhiteBox>
               <WhiteBox__back isBack={isBack[1]}>
                   <Architecture><img src="./images/weMap/Architecture.png" alt="architecture그림"/></Architecture>
-                  <ProjDetail>
+                  <ProjDetail_back>
                     <MoreAbout>
                       <a href="https://github.com/gyural/WeMap-Frontend"><img src={moreAboutPath[0]}alt="깃허브 아이콘" /></a>
                       <div onClick={()=>{handleIsBack(1)}}>
@@ -401,7 +448,7 @@ const ProjectSection = React.forwardRef((props, ref)=>{
                         또 전처리 까지는 했지만 kakaoMap에서 쓰는 좌표단위를 맞춰주기 위해 <strong>Proj4</strong>라는 라이브러리를 사용해 좌표를 맞추는 함수를 구현했습니다.<br/> 
                         <strong>JWT</strong>를 통해 유저 인증을 구현했습니다. 개발버전에서는 성공적으로 작동했습니다. 하지만 배포 버전에서의 cookie접근 CORS에러로 인해 배포버전에는 반영하지 못했습니다. 
                       </p>
-                  </ProjDetail>
+                  </ProjDetail_back>
               </WhiteBox__back>
             </WhiteBoxContainer>
           </ProjectContainer>
@@ -445,7 +492,7 @@ const ProjectSection = React.forwardRef((props, ref)=>{
               </WhiteBox>
               <WhiteBox__back isBack={isBack[2]}>
                   <Architecture><img src="./images/BuzzerBeater/architechture.png" alt="architecture그림"/></Architecture>
-                  <ProjDetail>
+                  <ProjDetail_back>
                     <MoreAbout>
                       <a href="https://github.com/TEAM-REDCODE/buzzer-beater-frontend.git"><img src={moreAboutPath[0]}alt="깃허브 아이콘" /></a>
                       <div onClick={()=>{handleIsBack(2)}}>
@@ -463,7 +510,7 @@ const ProjectSection = React.forwardRef((props, ref)=>{
                       배포에서 <strong>PlayConsole</strong>을 이용해 배포를 완료했습니다.(테스트 버전)
 
                     </p>
-                  </ProjDetail>
+                  </ProjDetail_back>
               </WhiteBox__back>
             </WhiteBoxContainer>
           </ProjectContainer>

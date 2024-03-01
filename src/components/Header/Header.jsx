@@ -42,6 +42,10 @@ const NavigationItems = styled.ul`
     font-size: 1.6rem;
     
   }
+  @media (max-width: 740px) {
+    font-size: 1.4rem;
+    
+  }
 `
 const NavigationItem = styled.li`
   cursor: pointer; 

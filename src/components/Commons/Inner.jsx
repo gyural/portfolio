@@ -4,6 +4,11 @@ import styled from 'styled-components';
 const InnerContainer = styled.div`
   width: 80%;
   margin: 0 auto;
+
+  @media (max-width: 740px) {
+    width: 95%;
+  }
+
   
 `;
 
