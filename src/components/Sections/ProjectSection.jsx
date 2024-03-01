@@ -310,7 +310,7 @@ const MoreAbout = styled.div`
     height: 36px;
     position: absolute;
     top: 24px;
-    right: 10px;
+    right: 2%;
     gap: 8px;
   & img {
     height: 100%;
@@ -336,9 +336,9 @@ const ProjectSection = React.forwardRef((props, ref)=>{
               <WhiteBox isBack={isBack[0]} row={true}>
                 <MoreAbout>
                   <a href="https://github.com/gyural/lettuce-frontend"><img src={moreAboutPath[0]}alt="깃허브 아이콘" /></a>
-                  <div onClick={()=>{handleIsBack(0)}}>
+                  <a onClick={()=>{handleIsBack(0)}}>
                     <img src={moreAboutPath[1]} alt="회전 아이콘" />
-                  </div>
+                  </a>
                 </MoreAbout>
                 <ProjThumnailContainer row={true}>
                   상추
@@ -374,9 +374,9 @@ const ProjectSection = React.forwardRef((props, ref)=>{
               <WhiteBox__back isBack={isBack[0]}>
                   <MoreAbout>
                     <a href="https://github.com/gyural/lettuce-frontend"><img src={moreAboutPath[0]}alt="깃허브 아이콘" /></a>
-                    <div onClick={()=>{handleIsBack(0)}}>
+                    <a onClick={()=>{handleIsBack(0)}}>
                       <img src={moreAboutPath[1]} alt="회전 아이콘" />
-                    </div>
+                    </a>
                   </MoreAbout>
                   <Architecture><img src="./images/lettuce/architecture.png" alt="architecture그림"/></Architecture>
                   <ProjDetail_back>
@@ -398,9 +398,9 @@ const ProjectSection = React.forwardRef((props, ref)=>{
               <WhiteBox isBack={isBack[1]}>
                 <MoreAbout>
                     <a href="https://github.com/gyural/WeMap-Frontend"><img src={moreAboutPath[0]}alt="깃허브 아이콘" /></a>
-                    <div onClick={()=>{handleIsBack(1)}}>
+                    <a onClick={()=>{handleIsBack(1)}}>
                       <img src={moreAboutPath[1]} alt="회전 아이콘" />
-                    </div>
+                    </a>
                 </MoreAbout>
                 <ProjThumnailContainer>
                   WeMap
@@ -434,9 +434,9 @@ const ProjectSection = React.forwardRef((props, ref)=>{
               <WhiteBox__back isBack={isBack[1]}>
                     <MoreAbout>
                       <a href="https://github.com/gyural/WeMap-Frontend"><img src={moreAboutPath[0]}alt="깃허브 아이콘" /></a>
-                      <div onClick={()=>{handleIsBack(1)}}>
+                      <a onClick={()=>{handleIsBack(1)}}>
                         <img src={moreAboutPath[1]} alt="회전 아이콘" />
-                      </div>
+                      </a>
                     </MoreAbout>
                   <Architecture><img src="./images/weMap/Architecture.png" alt="architecture그림"/></Architecture>
                   <ProjDetail_back>
@@ -461,9 +461,9 @@ const ProjectSection = React.forwardRef((props, ref)=>{
               <WhiteBox isBack={isBack[2]}>
                 <MoreAbout>
                   <a href="https://github.com/TEAM-REDCODE/buzzer-beater-frontend"><img src={moreAboutPath[0]}alt="깃허브 아이콘" /></a>
-                  <div onClick={()=>{handleIsBack(2)}}>
+                  <a onClick={()=>{handleIsBack(2)}}>
                     <img src={moreAboutPath[1]} alt="회전 아이콘" />
-                  </div>
+                  </a>
                 </MoreAbout>
                 <ProjThumnailContainer>
                   BuzzerBeater
@@ -495,9 +495,9 @@ const ProjectSection = React.forwardRef((props, ref)=>{
               <WhiteBox__back isBack={isBack[2]}>
                   <MoreAbout>
                     <a href="https://github.com/TEAM-REDCODE/buzzer-beater-frontend.git"><img src={moreAboutPath[0]}alt="깃허브 아이콘" /></a>
-                    <div onClick={()=>{handleIsBack(2)}}>
+                    <a onClick={()=>{handleIsBack(2)}}>
                       <img src={moreAboutPath[1]} alt="회전 아이콘" />
-                    </div>
+                    </a>
                   </MoreAbout>
                   <Architecture><img src="./images/BuzzerBeater/architechture.png" alt="architecture그림"/></Architecture>
                   <ProjDetail_back>
