@@ -308,10 +308,9 @@ const ProjDetail_back = styled.div`
 const MoreAbout = styled.div`
     display: flex;
     height: 36px;
-    width: 101px;
     position: absolute;
     top: 24px;
-    right: 0px;
+    right: 10px;
     gap: 8px;
   & img {
     height: 100%;
@@ -335,17 +334,18 @@ const ProjectSection = React.forwardRef((props, ref)=>{
           <ProjectContainer>
             <WhiteBoxContainer row={true}>
               <WhiteBox isBack={isBack[0]} row={true}>
+                <MoreAbout>
+                  <a href="https://github.com/gyural/lettuce-frontend"><img src={moreAboutPath[0]}alt="깃허브 아이콘" /></a>
+                  <div onClick={()=>{handleIsBack(0)}}>
+                    <img src={moreAboutPath[1]} alt="회전 아이콘" />
+                  </div>
+                </MoreAbout>
                 <ProjThumnailContainer row={true}>
                   상추
                   <ProjThumnail><ProjectImages row={true} imgPath={lettucePath}></ProjectImages></ProjThumnail>
                 </ProjThumnailContainer>
                 <ProjDetail row={true}>
-                  <MoreAbout>
-                    <a href="https://github.com/gyural/lettuce-frontend"><img src={moreAboutPath[0]}alt="깃허브 아이콘" /></a>
-                    <div onClick={()=>{handleIsBack(0)}}>
-                      <img src={moreAboutPath[1]} alt="회전 아이콘" />
-                    </div>
-                  </MoreAbout>
+                  
                   <div className='left'>
                     <p>
                       <h3>✔️기간 :<br/></h3>
@@ -372,14 +372,14 @@ const ProjectSection = React.forwardRef((props, ref)=>{
 
               </WhiteBox>
               <WhiteBox__back isBack={isBack[0]}>
+                  <MoreAbout>
+                    <a href="https://github.com/gyural/lettuce-frontend"><img src={moreAboutPath[0]}alt="깃허브 아이콘" /></a>
+                    <div onClick={()=>{handleIsBack(0)}}>
+                      <img src={moreAboutPath[1]} alt="회전 아이콘" />
+                    </div>
+                  </MoreAbout>
                   <Architecture><img src="./images/lettuce/architecture.png" alt="architecture그림"/></Architecture>
                   <ProjDetail_back>
-                    <MoreAbout>
-                      <a href="https://github.com/gyural/lettuce-frontend"><img src={moreAboutPath[0]}alt="깃허브 아이콘" /></a>
-                      <div onClick={()=>{handleIsBack(0)}}>
-                        <img src={moreAboutPath[1]} alt="회전 아이콘" />
-                      </div>
-                    </MoreAbout>
                     <p>
                       <h3>✔  내가 맡은 부분 :<br/></h3>
                       <strong>React Component</strong>를 통해 UI를 구현했습니다. <br /><strong>네이버검색 API</strong>를 통해서 상품 검색시 상위 100개의 상품을 화면에 나타냈습니다.
@@ -396,17 +396,18 @@ const ProjectSection = React.forwardRef((props, ref)=>{
           <ProjectContainer>
             <WhiteBoxContainer>
               <WhiteBox isBack={isBack[1]}>
+                <MoreAbout>
+                    <a href="https://github.com/gyural/WeMap-Frontend"><img src={moreAboutPath[0]}alt="깃허브 아이콘" /></a>
+                    <div onClick={()=>{handleIsBack(1)}}>
+                      <img src={moreAboutPath[1]} alt="회전 아이콘" />
+                    </div>
+                </MoreAbout>
                 <ProjThumnailContainer>
                   WeMap
                   <ProjThumnail><ProjectImages imgPath={weMapPath}></ProjectImages></ProjThumnail>
                 </ProjThumnailContainer>
                 <ProjDetail>
-                  <MoreAbout>
-                    <a href="https://github.com/gyural/WeMap-Frontend"><img src={moreAboutPath[0]}alt="깃허브 아이콘" /></a>
-                    <div onClick={()=>{handleIsBack(1)}}>
-                      <img src={moreAboutPath[1]} alt="회전 아이콘" />
-                    </div>
-                  </MoreAbout>
+                  
                   
                   <p>
                   <h3>✔️기간 :<br/></h3>
@@ -431,14 +432,15 @@ const ProjectSection = React.forwardRef((props, ref)=>{
 
               </WhiteBox>
               <WhiteBox__back isBack={isBack[1]}>
-                  <Architecture><img src="./images/weMap/Architecture.png" alt="architecture그림"/></Architecture>
-                  <ProjDetail_back>
                     <MoreAbout>
                       <a href="https://github.com/gyural/WeMap-Frontend"><img src={moreAboutPath[0]}alt="깃허브 아이콘" /></a>
                       <div onClick={()=>{handleIsBack(1)}}>
                         <img src={moreAboutPath[1]} alt="회전 아이콘" />
                       </div>
                     </MoreAbout>
+                  <Architecture><img src="./images/weMap/Architecture.png" alt="architecture그림"/></Architecture>
+                  <ProjDetail_back>
+                    
                       <p>
                         <h3>✔ 내가 맡은 부분 :<br/></h3>
                         처음으로 배포에 성공한 프로젝트 입니다.<br/>
@@ -457,17 +459,17 @@ const ProjectSection = React.forwardRef((props, ref)=>{
           <ProjectContainer>
             <WhiteBoxContainer>
               <WhiteBox isBack={isBack[2]}>
+                <MoreAbout>
+                  <a href="https://github.com/TEAM-REDCODE/buzzer-beater-frontend"><img src={moreAboutPath[0]}alt="깃허브 아이콘" /></a>
+                  <div onClick={()=>{handleIsBack(2)}}>
+                    <img src={moreAboutPath[1]} alt="회전 아이콘" />
+                  </div>
+                </MoreAbout>
                 <ProjThumnailContainer>
                   BuzzerBeater
                   <ProjThumnail><ProjectImages imgPath={buzzerBeaterPath}></ProjectImages></ProjThumnail>
                 </ProjThumnailContainer>
                 <ProjDetail>
-                  <MoreAbout>
-                    <a href="https://github.com/TEAM-REDCODE/buzzer-beater-frontend"><img src={moreAboutPath[0]}alt="깃허브 아이콘" /></a>
-                    <div onClick={()=>{handleIsBack(2)}}>
-                      <img src={moreAboutPath[1]} alt="회전 아이콘" />
-                    </div>
-                  </MoreAbout>
                   <p>
                   <h3>✔️기간 :<br/></h3>
                   23년 11/27 ~ 24년 2/2<br/>
@@ -491,14 +493,14 @@ const ProjectSection = React.forwardRef((props, ref)=>{
 
               </WhiteBox>
               <WhiteBox__back isBack={isBack[2]}>
+                  <MoreAbout>
+                    <a href="https://github.com/TEAM-REDCODE/buzzer-beater-frontend.git"><img src={moreAboutPath[0]}alt="깃허브 아이콘" /></a>
+                    <div onClick={()=>{handleIsBack(2)}}>
+                      <img src={moreAboutPath[1]} alt="회전 아이콘" />
+                    </div>
+                  </MoreAbout>
                   <Architecture><img src="./images/BuzzerBeater/architechture.png" alt="architecture그림"/></Architecture>
                   <ProjDetail_back>
-                    <MoreAbout>
-                      <a href="https://github.com/TEAM-REDCODE/buzzer-beater-frontend.git"><img src={moreAboutPath[0]}alt="깃허브 아이콘" /></a>
-                      <div onClick={()=>{handleIsBack(2)}}>
-                        <img src={moreAboutPath[1]} alt="회전 아이콘" />
-                      </div>
-                    </MoreAbout>
                     <p>
                       <h3>✔ 내가 맡은 부분 :<br/></h3>
                       <strong>JWT 인증</strong>을 통해 유저 인증을 완료했고 해당 토큰을 통해 여러 API 접근을 제어했습니다. 이때
