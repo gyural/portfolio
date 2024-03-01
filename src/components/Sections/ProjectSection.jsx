@@ -134,7 +134,7 @@ const ProjectContainer = styled.div`
 // WhiteBox
 const WhiteBoxContainer = styled.div`
   width: 100%;
-  height: ${(props)=>(props.row === true? (`1000px`):('735px'))};
+  height: ${(props)=>(props.row === true? (`auto`):('auto'))};
   margin-bottom: 30px;
   text-align: center;
   font-size: 30px;
@@ -143,14 +143,14 @@ const WhiteBoxContainer = styled.div`
   position: relative;
 
   @media (max-width: 1000px) {
-  height: ${(props)=>(props.row === true? (`1000px`):('920px'))};
+  height: ${(props)=>(props.row === true? (`auto`):('auto'))};
 
     font-size: 24px;
   }
 
   @media (max-width: 740px) {
     width: 100%;
-    height: ${(props)=>(props.row === true? (`1000px`):('1520px'))};
+    height: ${(props)=>(props.row === true? (`auto`):('auto'))};
     font-size: 36px;
   }
 `
