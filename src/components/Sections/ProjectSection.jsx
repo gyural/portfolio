@@ -150,7 +150,7 @@ const WhiteBoxContainer = styled.div`
 
   @media (max-width: 740px) {
     width: 100%;
-    height: ${(props)=>(props.row === true? (`1000px`):('1180px'))};
+    height: ${(props)=>(props.row === true? (`1000px`):('1520px'))};
     font-size: 36px;
   }
 `
