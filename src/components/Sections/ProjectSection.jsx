@@ -160,7 +160,6 @@ const WhiteBox =styled.div`
     box-sizing: border-box;
     background-color: #fff;
     border-radius: 15px;
-    margin-top: 30px;
     display: flex;
     flex-direction: ${(props)=>(props.row ? 'column' : 'row')};
     justify-content: space-around;
@@ -190,7 +189,6 @@ const WhiteBox__back =styled.div`
   background-color: #fff;
   align-items: center;
   border-radius: 15px;
-  margin-top: 30px;
   margin-bottom: 10px;
   display: flex;
   justify-content: space-around;
@@ -407,8 +405,6 @@ const ProjectSection = React.forwardRef((props, ref)=>{
                   <ProjThumnail><ProjectImages imgPath={weMapPath}></ProjectImages></ProjThumnail>
                 </ProjThumnailContainer>
                 <ProjDetail>
-                  
-                  
                   <p>
                   <h3>✔️기간 :<br/></h3>
                   23년 9/4 ~ 23년 10/10<br/>
@@ -438,9 +434,8 @@ const ProjectSection = React.forwardRef((props, ref)=>{
                         <img src={moreAboutPath[1]} alt="회전 아이콘" />
                       </a>
                     </MoreAbout>
-                  <Architecture><img src="./images/weMap/Architecture.png" alt="architecture그림"/></Architecture>
+                  <Architecture><img src="./images/weMap/WeMap-Architechture2.png" alt="architecture그림"/></Architecture>
                   <ProjDetail_back>
-                    
                       <p>
                         <h3>✔ 내가 맡은 부분 :<br/></h3>
                         처음으로 배포에 성공한 프로젝트 입니다.<br/>
@@ -499,7 +494,7 @@ const ProjectSection = React.forwardRef((props, ref)=>{
                       <img src={moreAboutPath[1]} alt="회전 아이콘" />
                     </a>
                   </MoreAbout>
-                  <Architecture><img src="./images/BuzzerBeater/architechture.png" alt="architecture그림"/></Architecture>
+                  <Architecture><img src="./images/BuzzerBeater/BuzzerBeater-Architechtur2.png" alt="architecture그림"/></Architecture>
                   <ProjDetail_back>
                     <p>
                       <h3>✔ 내가 맡은 부분 :<br/></h3>
